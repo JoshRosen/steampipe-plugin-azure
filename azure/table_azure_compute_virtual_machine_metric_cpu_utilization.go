@@ -26,6 +26,12 @@ func tableAzureComputeVirtualMachineMetricCpuUtilization(_ context.Context) *plu
 				Type:        proto.ColumnType_STRING,
 				Transform:   transform.FromField("DimensionValue").Transform(lastPathElement),
 			},
+			{
+				Name:        "id",
+				Description: "The unique id identifying the virtual machine in subscription.",
+				Type:        proto.ColumnType_STRING,
+				Transform:   transform.FromField("DimensionValue"),
+			},
 		}),
 	}
 }
